@@ -39,7 +39,6 @@ def is_prime(n):
     """
     Returns True if n is a prime number, False otherwise.
     """
-    # Numbers less than 2 are not prime
     if n < 2:
         return False
     
