@@ -128,10 +128,9 @@ def add_matrices(A, B):
     rows = len(A)
     cols = len(A[0])
     
-    # Initialize an M x N result matrix filled with zeros
+
     result = [[0 for _ in range(cols)] for _ in range(rows)]
     
-    # Perform element-wise addition
     for i in range(rows):
         for j in range(cols):
             result[i][j] = A[i][j] + B[i][j]
@@ -152,13 +151,11 @@ def multiply_matrices(A, B):
     cols_A = len(A[0])
     cols_B = len(B[0])
     
-    # Initialize an M x P result matrix filled with zeros
     result = [[0 for _ in range(cols_B)] for _ in range(rows_A)]
     
-    # Perform matrix multiplication using 3 nested loops
-    for i in range(rows_A):          # Iterate through rows of A
-        for j in range(cols_B):      # Iterate through columns of B
-            for k in range(cols_A):  # Iterate through elements to dot-product
+    for i in range(rows_A):         
+        for j in range(cols_B):      
+            for k in range(cols_A):  
                 result[i][j] += A[i][k] * B[k][j]
                 
     return result
@@ -173,7 +170,6 @@ def main():
     print("        MATRIX OPERATIONS PROGRAM         ")
     print("==========================================")
 
-    # --- PART A: Transpose ---
     print("\n--- PART A: TRANSPOSE A MATRIX ---")
     rows = int(input("Enter number of rows: "))
     cols = int(input("Enter number of columns: "))
@@ -184,7 +180,7 @@ def main():
     transposed_a = transpose(matrix_a)
     display_matrix(transposed_a, "Transposed Matrix")
 
-    # --- PART B: Addition ---
+
     print("\n------------------------------------------")
     print("--- PART B: ADD TWO MATRICES ---")
     print(f"Adding two matrices of size ({rows} x {cols}):")
@@ -198,7 +194,6 @@ def main():
     display_matrix(mat2, "Matrix 2")
     display_matrix(sum_matrix, "Sum Matrix (Matrix 1 + Matrix 2)")
 
-    # --- PART C: Multiplication ---
     print("\n------------------------------------------")
     print("--- PART C: MULTIPLY TWO MATRICES ---")
     print(f"Matrix A will be size ({rows} x {cols}).")
