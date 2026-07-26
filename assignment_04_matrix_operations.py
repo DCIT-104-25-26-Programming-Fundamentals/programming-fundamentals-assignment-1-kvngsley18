@@ -87,7 +87,6 @@ def display_matrix(matrix, title="Matrix"):
     """Displays a matrix in a neatly aligned grid format."""
     print(f"\n{title}:")
     for row in matrix:
-        # Formats integers cleanly while keeping decimals for float values
         formatted_row = " ".join(
             f"{int(val):>6}" if val.is_integer() else f"{val:>6.2f}" for val in row
         )
@@ -106,10 +105,8 @@ def transpose(matrix):
     rows = len(matrix)
     cols = len(matrix[0])
     
-    # Initialize an N x M result matrix filled with zeros
     transposed = [[0 for _ in range(rows)] for _ in range(cols)]
     
-    # Fill in transposed values using nested loops
     for i in range(rows):
         for j in range(cols):
             transposed[j][i] = matrix[i][j]
