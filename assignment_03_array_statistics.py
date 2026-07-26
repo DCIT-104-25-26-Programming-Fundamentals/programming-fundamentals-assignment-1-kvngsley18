@@ -39,3 +39,55 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def calc_sum(numbers):
+    """Calculates the sum of a list of numbers using a loop."""
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+
+def calc_average(numbers):
+    """Calculates the average of a list of numbers."""
+    total = calc_sum(numbers)
+    return total / len(numbers)
+
+
+def calc_max(numbers):
+    """Finds the maximum value in a list of numbers using a loop."""
+    highest = numbers[0]
+    for num in numbers[1:]:
+        if num > highest:
+            highest = num
+    return highest
+
+
+def calc_min(numbers):
+    """Finds the minimum value in a list of numbers using a loop."""
+    lowest = numbers[0]
+    for num in numbers[1:]:
+        if num < lowest:
+            lowest = num
+    return lowest
+
+
+if __name__ == "__main__":
+    count = int(input("How many numbers? "))
+    
+    if count <= 0:
+        print("Error: Please enter a positive integer greater than 0.")
+    else:
+        num_list = []
+        for i in range(1, count + 1):
+            val = float(input(f"Enter number {i}: "))
+            num_list.append(val)
+        
+        print("\nResults:")
+        print(f"Sum:     {calc_sum(num_list)}")
+        print(f"Average: {calc_average(num_list)}")
+        
+        max_val = calc_max(num_list)
+        min_val = calc_min(num_list)
+        
+        print(f"Maximum: {int(max_val) if max_val.is_integer() else max_val}")
+        print(f"Minimum: {int(min_val) if min_val.is_integer() else min_val}")
