@@ -49,3 +49,61 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def print_fibonacci_sequence():
+    """Part A: Asks for N and prints the first N Fibonacci numbers."""
+    try:
+        n = int(input("How many terms? "))
+        if n <= 0:
+            print("Error: Please enter a positive integer greater than 0.")
+            return
+    except ValueError:
+        print("Error: Invalid input. Please enter a positive whole number.")
+        return
+
+    # Generate sequence up to N terms using an iterative loop
+    a, b = 0, 1
+    terms = []
+
+    for _ in range(n):
+        terms.append(str(a))
+        a, b = b, a + b
+
+    print("Fibonacci sequence:", " ".join(terms))
+
+
+def check_fibonacci_number():
+    """Part B: Checks whether a user-provided number belongs to the Fibonacci sequence."""
+    try:
+        target = int(input("Enter a number to check: "))
+        if target < 0:
+            print(f"{target} is NOT a Fibonacci number.")
+            return
+    except ValueError:
+        print("Error: Invalid input. Please enter a valid integer.")
+        return
+
+    # Special edge cases: 0 and 1 belong to the sequence
+    if target in (0, 1):
+        print(f"{target} is a Fibonacci number.")
+        return
+
+    # Generate sequence until we reach or exceed the target number
+    a, b = 0, 1
+    while b < target:
+        a, b = b, a + b
+
+    if b == target:
+        print(f"{target} is a Fibonacci number.")
+    else:
+        print(f"{target} is NOT a Fibonacci number.")
+
+
+def main():
+    print("--- PART A ---")
+    print_fibonacci_sequence()
+
+    print("\n--- PART B ---")
+    check_fibonacci_number()
+
+if __name__ == "__main__":
+    main()
