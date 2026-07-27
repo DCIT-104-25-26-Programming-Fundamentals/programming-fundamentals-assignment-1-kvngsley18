@@ -55,3 +55,50 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def generate_single_table():
+    """PART A: Generates a single multiplication table from 1 to 12 for a given number."""
+    try:
+        num = int(input("Enter a number: "))
+        if num <= 0:
+            print("Error: Please enter a positive integer greater than 0.")
+            return
+    except ValueError:
+        print("Error: Invalid input. Please enter a valid whole number.")
+        return
+
+    print(f"\nMultiplication Table for {num}:")
+    for i in range(1, 13):
+        print(f"{num} x {i:>2} = {num * i}")
+
+
+def generate_multiple_tables():
+    """PART B: Generates multiplication tables from 1 to N (1 to 12 each)."""
+    try:
+        n = int(input("Enter N (tables from 1 to N): "))
+        if n <= 0:
+            print("Error: Please enter a positive integer greater than 0.")
+            return
+    except ValueError:
+        print("Error: Invalid input. Please enter a valid whole number.")
+        return
+
+    for current in range(1, n + 1):
+        print(f"\nMultiplication Table for {current}:")
+        for i in range(1, 13):
+            print(f"{current} x {i:>2} = {current * i}")
+        
+        # Add a visual separator between tables
+        if current < n:
+            print("-" * 27)
+
+
+def main():
+    print("--- PART A: Single Table ---")
+    generate_single_table()
+
+    print("\n--- PART B: Tables 1 to N ---")
+    generate_multiple_tables()
+
+
+if __name__ == "__main__":
+    main()
