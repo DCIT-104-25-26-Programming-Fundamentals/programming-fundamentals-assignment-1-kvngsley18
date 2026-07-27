@@ -60,7 +60,6 @@ def print_fibonacci_sequence():
         print("Error: Invalid input. Please enter a positive whole number.")
         return
 
-    # Generate sequence up to N terms using an iterative loop
     a, b = 0, 1
     terms = []
 
@@ -82,12 +81,10 @@ def check_fibonacci_number():
         print("Error: Invalid input. Please enter a valid integer.")
         return
 
-    # Special edge cases: 0 and 1 belong to the sequence
     if target in (0, 1):
         print(f"{target} is a Fibonacci number.")
         return
 
-    # Generate sequence until we reach or exceed the target number
     a, b = 0, 1
     while b < target:
         a, b = b, a + b
