@@ -53,7 +53,7 @@
 # - Each operation must be in its own function (see scaffold below).
 # - Display each matrix in a neat, aligned grid format.
 # - Tip: Complete Part A first, then Parts B and C.
-#
+
 
 #
 # =============================================================================
