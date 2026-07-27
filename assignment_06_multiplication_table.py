@@ -87,7 +87,7 @@ def generate_multiple_tables():
         for i in range(1, 13):
             print(f"{current} x {i:>2} = {current * i}")
         
-        # Add a visual separator between tables
+     
         if current < n:
             print("-" * 27)
 
