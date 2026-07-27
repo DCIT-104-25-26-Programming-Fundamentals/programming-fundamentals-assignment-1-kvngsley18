@@ -70,7 +70,6 @@ def generate_single_table():
     for i in range(1, 13):
         print(f"{num} x {i:>2} = {num * i}")
 
-
 def generate_multiple_tables():
     """PART B: Generates multiplication tables from 1 to N (1 to 12 each)."""
     try:
@@ -87,10 +86,8 @@ def generate_multiple_tables():
         for i in range(1, 13):
             print(f"{current} x {i:>2} = {current * i}")
         
-     
         if current < n:
             print("-" * 27)
-
 
 def main():
     print("--- PART A: Single Table ---")
