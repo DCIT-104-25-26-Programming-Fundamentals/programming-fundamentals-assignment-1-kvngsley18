@@ -147,7 +147,7 @@ def main():
         elif choice == "3":
             delete_task(tasks)
         elif choice == "4":
-            print("\nGoodbye!")
+            print("\nThank you for using the To-Do list application. Goodbye!")
             break
         else:
             print("Invalid choice. Please enter a number from 1 to 4.")
