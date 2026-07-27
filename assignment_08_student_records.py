@@ -97,7 +97,6 @@ def add_student(students):
         print("Error: Student name cannot be empty.")
         return
 
-    # Get student ID
     try:
         student_id = int(input("Student ID: "))
         # Check for duplicate student IDs
@@ -107,8 +106,6 @@ def add_student(students):
     except ValueError:
         print("Error: Invalid ID format. Please enter a valid whole number.")
         return
-
-    # Get number of assessment scores
     try:
         num_scores = int(input("How many scores? "))
         if num_scores <= 0:
@@ -118,7 +115,6 @@ def add_student(students):
         print("Error: Invalid input. Please enter a positive integer.")
         return
 
-    # Collect individual scores
     scores = []
     for i in range(1, num_scores + 1):
         while True:
@@ -132,7 +128,6 @@ def add_student(students):
             except ValueError:
                 print("Invalid input. Please enter a numeric score.")
 
-    # Construct the dictionary record
     student = {
         "name": name,
         "id": student_id,
