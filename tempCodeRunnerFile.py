@@ -94,7 +94,6 @@ def transpose(matrix):
     rows = len(matrix)
     cols = len(matrix[0])
 
-    # Initialize a new matrix of size N x M filled with zeros
     transposed = [[0 for _ in range(rows)] for _ in range(cols)]
 
     for i in range(rows):
@@ -130,10 +129,9 @@ def multiply_matrices(mat_a, mat_b):
     Resulting matrix is M x P.
     """
     m = len(mat_a)
-    n = len(mat_a[0])  # Must equal len(mat_b)
+    n = len(mat_a[0]) 
     p = len(mat_b[0])
 
-    # Initialize result matrix of size M x P filled with zeros
     result = [[0 for _ in range(p)] for _ in range(m)]
 
     # Triple nested loop to compute dot products
@@ -150,8 +148,6 @@ def multiply_matrices(mat_a, mat_b):
 # =============================================================================
 def main():
     print("=== MATRIX OPERATIONS PROGRAM ===")
-
-    # --- PART A TEST ---
     print("\n--- PART A: Transpose a Matrix ---")
     m = int(input("Enter number of rows: "))
     n = int(input("Enter number of columns: "))
@@ -163,7 +159,6 @@ def main():
     print("\nTransposed Matrix:")
     print_matrix(transpose(mat))
 
-    # --- PART B TEST ---
     print("\n--- PART B: Add Two Matrices ---")
     m = int(input("Enter number of rows: "))
     n = int(input("Enter number of columns: "))
@@ -173,7 +168,6 @@ def main():
     print("\nMatrix A + Matrix B:")
     print_matrix(add_matrices(mat_a, mat_b))
 
-    # --- PART C TEST ---
     print("\n--- PART C: Multiply Two Matrices ---")
     m = int(input("Enter rows for Matrix A (M): "))
     n = int(input("Enter columns for Matrix A / rows for Matrix B (N): "))
